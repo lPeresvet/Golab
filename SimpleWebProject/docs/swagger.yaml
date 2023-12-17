@@ -1,0 +1,36 @@
+basePath: /
+definitions:
+  model.User:
+    properties:
+      firstName:
+        type: string
+      id:
+        type: integer
+      lastName:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: Simple User Service
+  title: Users Example App
+  version: "1.0"
+paths:
+  /users:
+    get:
+      description: Get list of users
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.User'
+            type: array
+      summary: Get Users
+      tags:
+      - users
+schemes:
+- http
+swagger: "2.0"
